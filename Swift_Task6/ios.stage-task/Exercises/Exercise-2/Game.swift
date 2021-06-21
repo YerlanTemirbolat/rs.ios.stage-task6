@@ -18,6 +18,6 @@ struct Game: GameCompatible {
 extension Game {
 
     func defineFirstAttackingPlayer(players: [Player]) -> Player? {
-        nil
+        return players.sorted(by: { $0.minTrump()!.value.rawValue < $1.minTrump()!.value.rawValue}).first
     }
 }
